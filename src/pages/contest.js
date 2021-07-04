@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ContestsBar from "../components/ContestBar";
 
 function Contest(props) {
   const [contests, setContest] = useState([]);
@@ -14,8 +15,8 @@ function Contest(props) {
   return (
     <div>
       <ul>
-        {contests.map((contest) => (
-          <li>{contest.name}</li>
+        {contests.map((contest, index) => (
+          <li key={index}>{<ContestsBar contest={contest} />}</li>
         ))}
       </ul>
     </div>
