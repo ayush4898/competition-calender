@@ -1,6 +1,6 @@
-import { faCodeBranch } from "@fortawesome/free-solid-svg-icons";
+import { faCodeBranch, faFileExcel } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "./ContestBar.css";
 function ChangeFormateDate(oldDate) {
   return oldDate.toString().split("-").reverse().join("-");
 }
@@ -12,7 +12,7 @@ function ContestsBar(props) {
         <div className="icon">
           <FontAwesomeIcon icon={faCodeBranch} />
         </div>
-        <div>
+        <div className="info">
           <div className="name">
             <a href={props.contest.url} target="_blank" rel="noreferrer">
               {props.contest.name}

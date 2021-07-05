@@ -4,9 +4,28 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ContestsBar from "../components/ContestBar";
 import OngoingContestsBar from "./ongoing";
 import BeforeContestsBar from "./beforeContest";
+
+let style = {
+  main: {
+    width: "100%",
+    display: "flex",
+    "flex-direction": "row",
+  },
+  list: {
+    "background-color": "#34495E",
+    "text-decoration": "none",
+    color: "white",
+    width: "50%",
+    height: "30px",
+    display: "flex",
+    "justify-content": "center",
+    "align-items": "center",
+    "margin-right": "1px",
+  },
+};
+
 function Contest(props) {
   const [contests, setContest] = useState([]);
-
   useEffect(() => {
     axios.get("https://kontests.net/api/v1/all").then(async (data) => {
       console.log(data.data);
@@ -20,9 +39,14 @@ function Contest(props) {
   return (
     <div>
       <Router>
-        <Link to="/ongoing">Active Contest</Link>
-        <Link to="/before">Future Contest</Link>
-
+        <div style={style.main}>
+          <Link to="/ongoing" style={style.list}>
+            Active Contest
+          </Link>
+          <Link to="/before" style={style.list}>
+            Future Contest
+          </Link>
+        </div>
         <Switch>
           <Route path="/ongoing">
             <OngoingContestsBar contest={Ongoing} />

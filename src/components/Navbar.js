@@ -9,10 +9,10 @@ import {
   faSyncAlt,
 } from "@fortawesome/free-solid-svg-icons";
 const style = {
-  backgroundColor: "midnightblue",
+  backgroundColor: "#3498DB",
   height: "50px",
   color: "#ffffff",
-  width: "100%",
+  width: "97%",
   top: "0%",
   display: "flex",
   alignItems: "center",
