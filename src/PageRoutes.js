@@ -8,7 +8,7 @@ function PageRoutes() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Contest} />
+          <Route exact default path="/" component={Contest} />
           <Route path="/hidden" component={Hidden} />
           <Route path="/setting" component={Settings} />
         </Switch>

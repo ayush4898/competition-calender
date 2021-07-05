@@ -1,5 +1,10 @@
 import { faCodeBranch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+function ChangeFormateDate(oldDate) {
+  return oldDate.toString().split("-").reverse().join("-");
+}
+
 function ContestsBar(props) {
   return (
     <div>
@@ -15,7 +20,9 @@ function ContestsBar(props) {
           </div>
           <div className="time">
             <span>Start Time : {props.contest.start_time}</span>
-            <span>End Time:{props.contest.end_time}</span>
+            <span>
+              End Time:{ChangeFormateDate(props.contest.end_time.split("T")[0])}
+            </span>
           </div>
         </div>
       </div>
