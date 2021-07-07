@@ -1,8 +1,8 @@
-import { faCodeBranch, faFileExcel } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./ContestBar.css";
+import Icons from "./icons";
 function ChangeFormateDate(oldDate) {
-  return oldDate.toString().split("-").reverse().join("-");
+  let a = new Date(oldDate);
+  return a.toString().substr(0, 24);
 }
 
 function ContestsBar(props) {
@@ -10,7 +10,8 @@ function ContestsBar(props) {
     <div>
       <div className="outer">
         <div className="icon">
-          <FontAwesomeIcon icon={faCodeBranch} />
+          <Icons site={props.contest.site} />
+          {/* <FontAwesomeIcon icon={faCodeBranch} /> */}
         </div>
         <div className="info">
           <div className="name">
@@ -18,12 +19,20 @@ function ContestsBar(props) {
               {props.contest.name}
             </a>
           </div>
+          {/* {props.contest.status === "CODING" ? ( */}
           <div className="time">
-            <span>Start Time : {props.contest.start_time}</span>
-            <span>
-              End Time:{ChangeFormateDate(props.contest.end_time.split("T")[0])}
-            </span>
+            <div className="innertime">
+              Starts : {ChangeFormateDate(props.contest.start_time)}
+              <small> (IST) </small>
+            </div>
+            <div className="innertime">
+              Ends : {ChangeFormateDate(props.contest.end_time)}
+              <small> (IST)</small>
+            </div>
           </div>
+          {/* ) : (
+            <div>"hello"</div>
+          )} */}
         </div>
       </div>
     </div>

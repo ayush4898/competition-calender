@@ -37,7 +37,7 @@ const style = {
 function Navbar() {
   return (
     <div style={style}>
-      <Link to="/">
+      <Link to="">
         <FontAwesomeIcon icon={faHome} style={style.icons} />
       </Link>
       <Link to="/setting">

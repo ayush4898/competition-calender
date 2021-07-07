@@ -8,9 +8,9 @@ function PageRoutes() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact default path="/" component={Contest} />
           <Route path="/hidden" component={Hidden} />
           <Route path="/setting" component={Settings} />
+          <Route exact path="" component={Contest} />
         </Switch>
       </Router>
     </div>

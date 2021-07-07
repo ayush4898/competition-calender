@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import ContestsBar from "../components/ContestBar";
+// import ContestsBar from "../components/ContestBar";
 import OngoingContestsBar from "./ongoing";
 import BeforeContestsBar from "./beforeContest";
 
@@ -40,7 +40,7 @@ function Contest(props) {
     <div>
       <Router>
         <div style={style.main}>
-          <Link to="/ongoing" style={style.list}>
+          <Link to="" style={style.list}>
             Active Contest
           </Link>
           <Link to="/before" style={style.list}>
@@ -48,11 +48,11 @@ function Contest(props) {
           </Link>
         </div>
         <Switch>
-          <Route path="/ongoing">
-            <OngoingContestsBar contest={Ongoing} />
-          </Route>
           <Route path="/before">
             <BeforeContestsBar contest={Before} />
+          </Route>
+          <Route path="">
+            <OngoingContestsBar contest={Ongoing} />
           </Route>
         </Switch>
       </Router>
