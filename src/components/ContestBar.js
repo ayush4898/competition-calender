@@ -1,5 +1,7 @@
 import "./ContestBar.css";
 import Icons from "./icons";
+import AddToCalender from "./AddToCalender";
+
 function ChangeFormateDate(oldDate) {
   let a = new Date(oldDate);
   return a.toString().substr(0, 24);
@@ -33,6 +35,14 @@ function ContestsBar(props) {
           {/* ) : (
             <div>"hello"</div>
           )} */}
+        </div>
+        <div>
+          <AddToCalender
+            name={props.contest.name}
+            url={props.contest.url}
+            s={props.contest.start_time}
+            e={props.contest.end_time}
+          />
         </div>
       </div>
     </div>
