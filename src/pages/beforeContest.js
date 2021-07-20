@@ -4,7 +4,8 @@ function BeforeContestsBar(props) {
   return (
     <div>
       {props.contest.map((contest) => {
-        return <ContestsBar contest={contest} />;
+        if (!localStorage.getItem(contest.site))
+          return <ContestsBar contest={contest} />;
       })}
     </div>
   );

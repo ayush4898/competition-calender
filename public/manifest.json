@@ -12,5 +12,10 @@
     "48": "logo192.png",
     "128": "logo192.png"
   },
-  "permissions": ["tabs"]
+  "permissions": [
+    "tabs",
+    "notifications",
+    "storage",
+    "https://kontests.net/api/v1/all"
+  ]
 }

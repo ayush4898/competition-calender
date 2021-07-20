@@ -1,0 +1,30 @@
+.outer_list {
+  display: block;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.inner_list {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px black solid; */
+  width: 95%;
+  padding-left: 5%;
+  height: 55px;
+  text-align: center;
+}
+ul li:hover {
+  background-color: rgba(160, 158, 158, 0.473);
+}
+.name_container {
+  text-align: center;
+  width: 60%;
+  margin-top: 4%;
+  font-size: large;
+  font-weight: 500;
+}
+
+.switch {
+  margin-top: 3%;
+}

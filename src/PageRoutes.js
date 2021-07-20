@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Contest, Hidden, Settings } from "./pages/index";
+import { Contest, Hidden } from "./pages/index";
+import Settings from "./pages/setting/setting";
 
 function PageRoutes() {
   return (
