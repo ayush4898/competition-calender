@@ -1,3 +1,4 @@
+/*global chrome*/
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,23 +35,37 @@ const style = {
   },
 };
 
+const handleClick = () => {
+  localStorage.removeItem("contest");
+  chrome.runtime.reload();
+};
+
 function Navbar() {
   return (
     <div style={style}>
       <Link to="">
-        <FontAwesomeIcon icon={faHome} style={style.icons} />
+        <FontAwesomeIcon icon={faHome} style={style.icons} title="Home" />
       </Link>
       <Link to="/setting">
-        <FontAwesomeIcon icon={faCog} style={style.icons} />
+        <FontAwesomeIcon icon={faCog} style={style.icons} title="Settings" />
       </Link>
       <Link to="/hidden">
-        <FontAwesomeIcon icon={faEyeSlash} style={style.icons} />
+        <FontAwesomeIcon icon={faEyeSlash} style={style.icons} title="Hidden" />
+      </Link>
+      <Link to="/github">
+        <FontAwesomeIcon
+          icon={faCodeBranch}
+          style={style.icons}
+          title="Github"
+        />
       </Link>
       <Link to="/">
-        <FontAwesomeIcon icon={faCodeBranch} style={style.icons} />
-      </Link>
-      <Link to="/">
-        <FontAwesomeIcon icon={faSyncAlt} style={style.refresh} />
+        <FontAwesomeIcon
+          icon={faSyncAlt}
+          style={style.refresh}
+          onClick={handleClick}
+          title="Refresh"
+        />
       </Link>
     </div>
   );

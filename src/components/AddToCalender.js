@@ -60,6 +60,7 @@ function AddToCalender(props) {
       icon={faCalendarCheck}
       style={style}
       onClick={handleClick}
+      title="Add to Calender"
     />
   );
 }

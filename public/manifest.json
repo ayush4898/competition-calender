@@ -16,6 +16,7 @@
     "tabs",
     "notifications",
     "storage",
+    "management",
     "https://kontests.net/api/v1/all"
   ]
 }
