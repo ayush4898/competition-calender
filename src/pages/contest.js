@@ -1,3 +1,4 @@
+/*global chrome*/
 import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
@@ -35,11 +36,30 @@ let notactiveStyle = {
   ...style.list,
   backgroundColor: "rgb(52,73,94)",
 };
+function timeout(delay) {
+  return new Promise((res) => setTimeout(res, delay));
+}
 function Contest(props) {
-  let temp = JSON.parse(localStorage.getItem("contests") || "ayush");
-  console.log("temp", temp);
-  const [contests, setContest] = useState(temp);
+  // await timeout(1000);
+  // let temp = [];
+  // if (typeof localStorage.getItem("contests") == "string")
+  //   temp = JSON.parse(localStorage.getItem("contests"));
+
+  // console.log("temp", temp);
+  const [contests, setContest] = useState([]);
   const [active, isActive] = useState("active");
+
+  // added await to compensate the error of localstorage
+  useEffect(async () => {
+    var f = localStorage.getItem("contests");
+    while (f == null) {
+      await timeout(500);
+      f = localStorage.getItem("contests");
+    }
+
+    let temp = JSON.parse(f);
+    setContest(temp);
+  }, []);
 
   // useEffect(() => {
   //   axios.get("https://kontests.net/api/v1/all").then(async (data) => {

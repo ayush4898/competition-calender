@@ -1,5 +1,5 @@
 .outer {
-  border: 1px solid black;
+  border-bottom: 1px solid rgba(112, 105, 105, 0.39);
   display: flex;
   flex-direction: row;
   padding: 1%;
@@ -16,7 +16,7 @@
 
 .info {
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   flex-direction: column;
   width: 70%;
 }
