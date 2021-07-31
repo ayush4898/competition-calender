@@ -9,6 +9,7 @@ function App() {
     !localStorage.getItem("date") ||
     localStorage.getItem("date") !== JSON.stringify(date.getDate())
   ) {
+    localStorage.removeItem("contests");
     axios.get("https://kontests.net/api/v1/all").then(async (data) => {
       console.log(data.data);
       let contest = data.data;

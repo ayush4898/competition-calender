@@ -27,7 +27,7 @@ const style = {
     margin: "15px",
   },
   refresh: {
-    marginLeft: "14rem",
+    marginLeft: "17rem",
     height: "20px",
     width: "20px",
     borderRadius: "30%",
@@ -49,9 +49,9 @@ function Navbar() {
       <Link to="/setting">
         <FontAwesomeIcon icon={faCog} style={style.icons} title="Settings" />
       </Link>
-      <Link to="/hidden">
+      {/* <Link to="/hidden">
         <FontAwesomeIcon icon={faEyeSlash} style={style.icons} title="Hidden" />
-      </Link>
+      </Link> */}
       <Link to="/github">
         <FontAwesomeIcon
           icon={faCodeBranch}

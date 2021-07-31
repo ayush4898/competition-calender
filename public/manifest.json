@@ -1,22 +1,16 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
-  "version": "1.0",
+  "name": " Competitive's Calender",
+  "description": "Displays live and upcoming Programming Contests happening on a variety of popular platforms. HAPPY CODING!!",
+  "version": "0.0.0.1",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "index.html",
     "default_title": "Calender"
   },
   "icons": {
-    "16": "logo192.png",
-    "48": "logo192.png",
-    "128": "logo192.png"
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   },
-  "permissions": [
-    "tabs",
-    "notifications",
-    "storage",
-    "management",
-    "https://kontests.net/api/v1/all"
-  ]
+  "permissions": ["https://kontests.net/api/v1/all"]
 }

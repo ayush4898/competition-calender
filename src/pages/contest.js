@@ -61,13 +61,6 @@ function Contest(props) {
     setContest(temp);
   }, []);
 
-  // useEffect(() => {
-  //   axios.get("https://kontests.net/api/v1/all").then(async (data) => {
-  //     console.log(data.data);
-  //     await setContest(data.data);
-  //   });
-  // }, []);
-
   const handleClick = async (event) => {
     await isActive(event);
   };
